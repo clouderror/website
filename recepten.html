@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recepten</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Zoek een recept...">
+    </div>
+
+    <div class="btn-container">
+      <button id="randomBtn">Kies een willekeurig recept</button>
+    </div>
+
+    <section class="recipes-list" id="recipesList">
+      <a href="https://www.ah.nl/allerhande/recept/R-R1199964/pasta-pesto-met-kip" class="recipe" data-title="Pasta pesto">
+        <img src="images/recepten/pastapesto.avif" alt="pasta pesto">
+        <h2>Pasta pesto</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1194006/broodje-kipburger-met-sla-tomaat-en-caesardressing" class="recipe" data-title="Kipburger">
+        <img src="images/recepten/kipburger.avif" alt="kipburger">
+        <h2>Kipburger</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1193763/fusilli-met-tomaat-verse-kruiden-en-parmezaan" class="recipe" data-title="Fusili tomaat">
+        <img src="images/recepten/fusilitomaat.jpg" alt="Fusili tomaat">
+        <h2>Fusili tomaat</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1193785/aziatische-slawraps-met-kip-en-rijst" class="recipe" data-title="Aziatische slawraps">
+        <img src="images/recepten/aziatische-slawraps.jpg" alt="Aziatische slawraps met kip en rijst">
+        <h2>Aziatische slawraps</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1192928/pokebowl-kip" class="recipe" data-title="Pokébowl kip">
+        <img src="images/recepten/pokebowl-kip.jpg" alt="Pokébowl kip">
+        <h2>Pokébowl kip</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1187995/pita-gyros-met-tzatziki-en-salade" class="recipe" data-title="Pita gyros">
+        <img src="images/recepten/pita-gyros.jpg" alt="Pita gyros met tzatziki en salade">
+        <h2>Pita gyros</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1188648/groene-sushibowl-met-krokante-tofu-en-nori" class="recipe" data-title="Groene sushibowl">
+        <img src="images/recepten/groene-sushibowl.jpg" alt="Groene sushibowl met krokante tofu en nori">
+        <h2>Groene sushibowl</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R1178284/karbonade-met-worteltjes-en-aardappelpuree" class="recipe" data-title="Karbonade met worteltjes">
+        <img src="images/recepten/karbonade-worteltjes.avif" alt="Karbonade met worteltjes en aardappelpuree">
+        <h2>Karbonade met worteltjes</h2>
+      </a>
+
+      <a href="https://www.ah.nl/allerhande/recept/R-R546580/spareribs-met-kleurige-sla" class="recipe" data-title="Spareribs met sla">
+        <img src="images/recepten/spareribs-sla.jpg" alt="Spareribs met kleurige sla">
+        <h2>Spareribs met sla</h2>
+      </a>
+    </section>
+  </main>
+
+<script>
+  fetch('header.js')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  const recipes = [
+    {
+      title: 'Pasta pesto',
+      img: 'images/recepten/pastapesto.avif',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1199964/pasta-pesto-met-kip'
+    },
+    {
+      title: 'Kipburger',
+      img: 'images/recepten/kipburger.avif',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1194006/broodje-kipburger-met-sla-tomaat-en-caesardressing'
+    },
+    {
+      title: 'Fusili tomaat',
+      img: 'images/recepten/fusilitomaat.jpg',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1193763/fusilli-met-tomaat-verse-kruiden-en-parmezaan'
+    },
+    {
+      title: 'Aziatische slawraps',
+      img: 'images/recepten/aziatische-slawraps.jpg',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1193785/aziatische-slawraps-met-kip-en-rijst'
+    },
+    {
+      title: 'Pokébowl kip',
+      img: 'images/recepten/pokebowl-kip.jpg',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1192928/pokebowl-kip'
+    },
+    {
+      title: 'Pita gyros',
+      img: 'images/recepten/pita-gyros.jpg',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1187995/pita-gyros-met-tzatziki-en-salade'
+    },
+    {
+      title: 'Groene sushibowl',
+      img: 'images/recepten/groene-sushibowl.jpg',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1188648/groene-sushibowl-met-krokante-tofu-en-nori'
+    },
+    {
+      title: 'Karbonade met worteltjes',
+      img: 'images/recepten/karbonade-worteltjes.avif',
+      link: 'https://www.ah.nl/allerhande/recept/R-R1178284/karbonade-met-worteltjes-en-aardappelpuree'
+    },
+    {
+      title: 'Spareribs met sla',
+      img: 'images/recepten/spareribs-sla.jpg',
+      link: 'https://www.ah.nl/allerhande/recept/R-R546580/spareribs-met-kleurige-sla'
+    }
+  ];
+
+  const randomBtn = document.getElementById('randomBtn');
+
+  randomBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * recipes.length);
+    const recipe = recipes[randomIndex];
+
+    const recipeElements = document.querySelectorAll('.recipe');
+    recipeElements.forEach(el => {
+      el.classList.remove('highlighted');
+    });
+
+    const chosenRecipeEl = Array.from(recipeElements).find(el => el.getAttribute('data-title').toLowerCase() === recipe.title.toLowerCase());
+
+    if (chosenRecipeEl) {
+      chosenRecipeEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      chosenRecipeEl.classList.add('highlighted');
+      setTimeout(() => {
+        chosenRecipeEl.classList.remove('highlighted');
+      }, 3000);
+    }
+  });
+
+  const searchInput = document.getElementById('searchInput');
+  const recipeLinks = document.querySelectorAll('.recipe');
+
+  searchInput.addEventListener('input', () => {
+    const searchValue = searchInput.value.toLowerCase();
+    recipeLinks.forEach(link => {
+      const title = link.getAttribute('data-title').toLowerCase();
+      link.style.display = title.includes(searchValue) ? 'flex' : 'none';
+    });
+  });
+</script>
+
+</body>
+</html>
