@@ -131,9 +131,10 @@ nav ul li a:hover {
 }
 
 .highlighted {
-  box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.8) !important;
+  box-shadow: 0 0 20px 5px #818650 !important;
   border-radius: 8px;
   transition: box-shadow 0.3s ease;
+  transform: scale(1.10);
 }
 
 .recipes-list {
