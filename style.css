@@ -11,10 +11,17 @@ body, html {
   margin: 0;
   padding: 0;
   background-color: #f5eae4;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none; 
 }
 
 main {
   min-height: 0vh;
+  max-width: 100vh;
   padding-bottom: 2em;
 }
 
