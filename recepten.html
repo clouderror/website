@@ -261,38 +261,44 @@
     ];
   
 
-  const randomBtn = document.getElementById('randomBtn');
+const randomBtn = document.getElementById('randomBtn');
 
-  randomBtn.addEventListener('click', () => {
-    const randomIndex = Math.floor(Math.random() * recipes.length);
-    const recipe = recipes[randomIndex];
+randomBtn.addEventListener('click', () => {
+  const randomIndex = Math.floor(Math.random() * recipes.length);
+  const recipe = recipes[randomIndex];
 
-    const recipeElements = document.querySelectorAll('.recipe');
-    recipeElements.forEach(el => {
-      el.classList.remove('highlighted');
-    });
-
-    const chosenRecipeEl = Array.from(recipeElements).find(el => el.getAttribute('data-title').toLowerCase() === recipe.title.toLowerCase());
-
-    if (chosenRecipeEl) {
-      chosenRecipeEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      chosenRecipeEl.classList.add('highlighted');
-      setTimeout(() => {
-        chosenRecipeEl.classList.remove('highlighted');
-      }, 3000);
-    }
+  const recipeElements = document.querySelectorAll('.recipe');
+  // Verwijder highlight van alle recepten
+  recipeElements.forEach(el => {
+    el.classList.remove('highlighted');
   });
 
-  const searchInput = document.getElementById('searchInput');
-  const recipeLinks = document.querySelectorAll('.recipe');
+  const chosenRecipeEl = Array.from(recipeElements).find(el => el.getAttribute('data-title').toLowerCase() === recipe.title.toLowerCase());
 
-  searchInput.addEventListener('input', () => {
-    const searchValue = searchInput.value.toLowerCase();
-    recipeLinks.forEach(link => {
-      const title = link.getAttribute('data-title').toLowerCase();
-      link.style.display = title.includes(searchValue) ? 'flex' : 'none';
-    });
+  if (chosenRecipeEl) {
+    chosenRecipeEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Animatie resetten door class te verwijderen en opnieuw toe te voegen
+    chosenRecipeEl.classList.remove('highlighted');
+    void chosenRecipeEl.offsetWidth;  // Forceer reflow
+    chosenRecipeEl.classList.add('highlighted');
+
+    setTimeout(() => {
+      chosenRecipeEl.classList.remove('highlighted');
+    }, 3000);
+  }
+});
+
+const searchInput = document.getElementById('searchInput');
+const recipeLinks = document.querySelectorAll('.recipe');
+
+searchInput.addEventListener('input', () => {
+  const searchValue = searchInput.value.toLowerCase();
+  recipeLinks.forEach(link => {
+    const title = link.getAttribute('data-title').toLowerCase();
+    link.style.display = title.includes(searchValue) ? 'flex' : 'none';
   });
+});
 </script>
 
   <footer>

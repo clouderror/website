@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Home</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <div class="game-card" onclick="location.href='colordle.html'">
+    <div class="game-thumb" style="background: linear-gradient(45deg, #9ba276,#a3abb3,#cbaad2,#c89794);"></div>
+    <div class="game-info">
+      <h2>Colordle</h2>
+      <p>Raad de juiste kleurencombinatie in de juiste volgorde!</p>
+      <button>Speel nu</button>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <main id="content">
+    </main>
+    <footer>
+      <p>© 2025 Micha. Alle rechten voorbehouden.</p>
+    </footer>
+  </div>
+
+  <script>
+    fetch('header.js')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-container').innerHTML = html;
+      });
+  </script>
+</body>
+</html>
