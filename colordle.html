@@ -2,28 +2,46 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <title>Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colordle</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="background-circle circle1"></div>
+<div class="background-circle circle2"></div>
+<div class="background-circle circle3"></div>
+<div class="background-circle circle4"></div>
+<div class="background-circle circle5"></div>
   <div id="header-container"></div>
 
-  <h1>Colordle</h1>
+  <main id="content" style="max-width: 500px; margin: 2em auto; padding: 0 1em; text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h1 style="font-weight: 700; font-size: 2.8rem; margin-bottom: 0.2em; color: #818650; text-shadow: 1px 1px 3px #d4cac8;">Colordle</h1>
 
-  <div id="board"></div>
+    <p style="max-width: 250px; margin: 0 auto 1.5em auto; font-style: italic; color: #5a5a5a; font-size: 1.1rem;">
+      Raad de kleurencombinatie! 
+      Klik op vier kleuren en druk op "Indienen".
+    </p>
 
-  <div id="picker">
-    <div id="color-options"></div>
-    <div id="current-selection"></div>
-    <button id="submitGuess">Indienen</button>
-    <button id="clearGuess">Wissen</button>
-  </div>
+    <div id="board" style="margin-bottom: 1.5em;"></div>
 
-  <p id="message"></p>
+    <section id="picker" style="display: flex; flex-direction: column; align-items: center; gap: 1em; margin-bottom: 2em;">
+      <div id="color-options" style="display: flex; gap: 0.8em; flex-wrap: wrap; justify-content: center;"></div>
+      <div id="current-selection" style="display: flex; gap: 0.7em; min-height: 50px; justify-content: center; align-items: center;"></div>
+      <div>
+        <button id="submitGuess" style="padding: 0.7em 1.5em; border-radius: 30px; border: none; background-color: #818650; color: white; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 5px 15px #d4cac8; margin-right: 0.5em;">
+          Indienen
+        </button>
+        <button id="clearGuess" style="padding: 0.7em 1.5em; border-radius: 30px; border: none; background-color: #bb8f8c; color: white; font-weight: 700; font-size: 1rem; cursor: pointer; box-shadow: 0 5px 15px #d4cac8;">
+          Wissen
+        </button>
+      </div>
+    </section>
+
+    <p id="message" style="font-weight: 600; font-size: 1.2rem; min-height: 2em; color: #5a5a5a; min-width: 280px; word-wrap: break-word;"></p>
+  </main>
 
   <div id="wrapper">
-    <main id="content"></main>
     <footer>
       <p>© 2025 Micha. Alle rechten voorbehouden.</p>
     </footer>
